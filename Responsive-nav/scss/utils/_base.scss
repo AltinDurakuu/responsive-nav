@@ -1,0 +1,19 @@
+//silence-is-golden
+body{
+    font-family: $body-font;
+    background: #000;
+    color: #fff;
+}
+.full-block{
+    float: left;
+    width: 100%;
+}
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
+@include small-tablet{
+    .container{
+        width: 80%;
+    }
+}

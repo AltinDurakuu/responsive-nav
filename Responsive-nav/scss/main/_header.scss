@@ -1,0 +1,105 @@
+//silence-is-golden
+header {
+    margin-top: 70px;
+    margin-bottom: 142px;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav ul{
+        display: flex;
+        li {
+            margin-right: 28px;
+            a{
+                text-decoration: none;
+                color: $primary-color;
+                font-size: 16px;
+                line-height: 1.4em;
+            }
+        }
+    }
+    .lines-container{
+        position: absolute;
+        z-index: 100;
+        right: calc(20% - 41px);
+        top: 51px;
+        border: 0;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        span {
+            width: 6px;
+            margin-right: 2px;
+            height: 6px;
+            background: $primary-color;
+            border-radius: 3px;
+            transition: all 0.5s ease-in-out;
+            &:last-child{
+                margin-right: 0;
+            }  
+        }
+    }
+    ul.active{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index:10;
+        transition: all .3s ease-in-out;
+        li{
+            margin-right: 0;
+            transition: all .3s ease-in-out;
+        }
+        a {
+            font-size: 30px;
+            line-height: 2em;
+            color: #fff;
+        }
+    }
+    .lines-container.active{
+        position: fixed;
+        transition: all 2s ease-in-out;
+        span:nth-child(2){
+            display: none;
+        }
+        span:first-child{
+            width: 4px;
+            height: 40px;
+            transform: translate(3px,0px) rotate(405deg);
+            transition: all 0.5s ease-in-out;
+        }
+        span:last-child{
+            height: 40px;
+            width: 4px;
+            transform: translate(-2px,0px) rotate(-405deg);
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    @include small-tablet{
+        margin-top: 44px;
+        .lines-container{
+            right: calc(10% - 41px);
+            top: 25px;
+        }
+    }
+    @include mobile{
+            .lines-container{
+                top: 1px;
+                right: 14px;
+            }
+            nav ul {
+                display: none;
+            }
+    }
+    
+}
